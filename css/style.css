@@ -3,6 +3,7 @@
 :root {
   --color-text-primary: white;
   --color-text-secondary: hsl(236, 100%, 87%);
+  --color-text-tertiary: hsl(235, 45%, 61%);
   --color-accent-main: hsl(246, 80%, 60%);
   --color-accent-orange: hsl(15, 100%, 70%);
   --color-accent-blue: hsl(195, 74%, 62%);
@@ -15,12 +16,15 @@
   --color-background-container: hsl(235, 46%, 20%);
 
   --fs-xl: 3.2rem;
-  --fs-500: 3rem;
+  --fs-500: 2.5rem;
   --fs-400: 1.8rem;
   --fs-300: 1.6rem;
   --fs-200: 1.4rem;
 
   --br-container: 20px;
+
+  --pd-block: 3rem;
+  --pd-inline: 2.5rem;
 }
 
 html {
@@ -50,6 +54,7 @@ h2 {
 
 h1 {
   font-size: var(--fs-500);
+  font-weight: 300;
 }
 
 h2 {
@@ -76,14 +81,62 @@ a {
 }
 
 .inner-box {
-  padding: 3rem 2.5rem;
+  padding: var(--pd-block) var(--pd-inline);
   border-radius: var(--br-container);
+}
+
+/* User Profile */
+header .outer-box {
+  background-color: var(--color-background-container);
+}
+
+header .inner-box {
+  background-color: var(--color-accent-main);
+}
+
+header .flex {
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile__title span {
+  font-size: var(--fs-300);
+  font-weight: 400;
+  display: block;
+  color: var(--color-text-secondary);
+  padding-bottom: 0.5rem;
+}
+
+.profile__picture {
+  width: 7rem;
+  height: auto;
+  -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white)
+    drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+
+  filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white)
+    drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+}
+
+.view-type-list {
+  padding: var(--pd-block) var(--pd-inline);
+  list-style: none;
+  justify-content: space-between;
+}
+
+.view-type .btn {
+  color: var(--color-text-tertiary);
+  font-size: var(--fs-400);
+}
+
+.view-type .btn:hover {
+  color: var(--color-text-primary);
 }
 
 /* task-item */
 .task-item {
   border-top: 3.8rem solid;
   position: relative;
+  clip-path: inset(0);
 }
 
 .task-item--play {
