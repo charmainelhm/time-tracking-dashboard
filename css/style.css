@@ -10,15 +10,17 @@
   --color-accent-green: hsl(145, 58%, 55%);
   --color-accent-violet: hsl(264, 64%, 52%);
   --color-accent-yellow: hsl(43, 84%, 65%);
-  --color-hover: hsl(235, 45%, 61%);
-  --color-background-main: hsl(226, 43%, 10%);
+  --color-hover: hsl(236, 34%, 43%);
+  --color-background-main: hsl(226, 41%, 10%);
   --color-background-container: hsl(235, 46%, 20%);
 
   --fs-xl: 3.2rem;
   --fs-500: 3rem;
   --fs-400: 1.8rem;
-  --fs-300: 1.4rem;
-  --fs-200: 1.2rem;
+  --fs-300: 1.6rem;
+  --fs-200: 1.4rem;
+
+  --br-container: 20px;
 }
 
 html {
@@ -57,6 +59,73 @@ h2 {
 
 a {
   text-decoration: none;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.outer-box {
+  border-radius: var(--br-container);
+}
+
+.inner-box {
+  padding: 3rem 2.5rem;
+  border-radius: var(--br-container);
+}
+
+/* task-item */
+.task-item {
+  border-top: 3.8rem solid;
+  position: relative;
+}
+
+.task-item--play {
+  border-color: var(--color-accent-blue);
+  background-color: var(--color-accent-blue);
+}
+
+.task-item .inner-box {
+  background-color: var(--color-background-container);
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.task-item .inner-box:hover {
+  background-color: var(--color-hover);
+}
+
+.task__icon {
+  position: absolute;
+  top: -32%;
+  right: 5%;
+  z-index: 1;
+}
+
+.task-header.flex,
+.task-content.flex {
+  justify-content: space-between;
+}
+
+.task-content.flex {
+  align-items: center;
+}
+
+.task-content {
+  padding-block: 1rem 0.5rem;
+}
+
+.task__data {
+  font-size: var(--fs-xl);
+  color: var(--color-text-primary);
+  font-weight: 300;
 }
 
 /* Attribution */
