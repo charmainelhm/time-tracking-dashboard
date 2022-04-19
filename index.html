@@ -15,6 +15,8 @@
       href="./images/favicon-32x32.png"
     />
 
+    <script defer type="module" src="js/script.js"></script>
+
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
   <body>
@@ -30,11 +32,15 @@
             <h1 class="profile__title"><span>Report for</span>Jeremy Robson</h1>
           </div>
           <ul class="view-type-list flex flex--column">
-            <li class="view-type"><button class="btn">Daily</button></li>
             <li class="view-type">
-              <button class="btn btn--active">Weekly</button>
+              <button class="btn view-btn">Daily</button>
             </li>
-            <li class="view-type"><button class="btn">Monthly</button></li>
+            <li class="view-type">
+              <button class="btn btn--active view-btn">Weekly</button>
+            </li>
+            <li class="view-type">
+              <button class="btn view-btn">Monthly</button>
+            </li>
           </ul>
         </div>
       </header>
@@ -51,7 +57,7 @@
               <img src="images/icon-ellipsis.svg" alt="Properties" />
             </button>
           </div>
-          <div class="task-content flex flex--column">
+          <div class="task-content flex flex--column" data-task-type="Work">
             <p class="task__data">32hrs</p>
             <p>Last Week - 36hrs</p>
           </div>
@@ -70,7 +76,7 @@
               <img src="images/icon-ellipsis.svg" alt="Properties" />
             </button>
           </div>
-          <div class="task-content flex flex--column">
+          <div class="task-content flex flex--column" data-task-type="Play">
             <p class="task__data">10hrs</p>
             <p>Last Week - 8hrs</p>
           </div>
@@ -89,7 +95,7 @@
               <img src="images/icon-ellipsis.svg" alt="Properties" />
             </button>
           </div>
-          <div class="task-content flex flex--column">
+          <div class="task-content flex flex--column" data-task-type="Study">
             <p class="task__data">4hrs</p>
             <p>Last Week - 7hrs</p>
           </div>
@@ -108,7 +114,7 @@
               <img src="images/icon-ellipsis.svg" alt="Properties" />
             </button>
           </div>
-          <div class="task-content flex flex--column">
+          <div class="task-content flex flex--column" data-task-type="Exercise">
             <p class="task__data">4hrs</p>
             <p>Last Week - 5hrs</p>
           </div>
@@ -127,7 +133,7 @@
               <img src="images/icon-ellipsis.svg" alt="Properties" />
             </button>
           </div>
-          <div class="task-content flex flex--column">
+          <div class="task-content flex flex--column" data-task-type="Social">
             <p class="task__data">5hrs</p>
             <p>Last Week - 10hrs</p>
           </div>
@@ -146,7 +152,10 @@
               <img src="images/icon-ellipsis.svg" alt="Properties" />
             </button>
           </div>
-          <div class="task-content flex flex--column">
+          <div
+            class="task-content flex flex--column"
+            data-task-type="Self Care"
+          >
             <p class="task__data">2hrs</p>
             <p>Last Week - 2hrs</p>
           </div>
