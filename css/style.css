@@ -47,6 +47,11 @@ body {
   font-size: var(--fs-200);
   color: var(--color-text-secondary);
   background-color: var(--color-background-main);
+  min-height: 100vh;
+  padding-block: 5rem;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 h1,
@@ -124,6 +129,10 @@ a {
 
   .container {
     max-width: 1110px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 255px 255px;
     grid-template-areas:
@@ -299,9 +308,23 @@ header .flex {
 
 /* Attribution */
 .attribution {
+  margin-top: 3rem;
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+.attribution a:hover {
+  color: var(--color-accent-main);
+}
+
+@media screen and (min-width: 900px) {
+  .attribution {
+    position: absolute;
+    bottom: 1%;
+    width: 100%;
+  }
 }
