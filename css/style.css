@@ -15,7 +15,9 @@
   --color-background-main: hsl(226, 41%, 10%);
   --color-background-container: hsl(235, 46%, 20%);
 
-  --fs-xl: 3.2rem;
+  --fs-xl: 5rem;
+  --fs-700: 3.8rem;
+  --fs-600: 3.2rem;
   --fs-500: 2.5rem;
   --fs-400: 1.8rem;
   --fs-300: 1.6rem;
@@ -83,23 +85,70 @@ a {
 
 .outer-box {
   border-radius: var(--br-container);
+  display: flex;
+  flex-direction: column;
 }
 
 .inner-box {
   padding: var(--pd-block) var(--pd-inline);
   border-radius: var(--br-container);
+  flex-grow: 1;
 }
 
 .container {
   width: 90%;
+  max-width: 450px;
   margin-inline: auto;
   display: grid;
   gap: 2.5rem;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "profile"
+    "work"
+    "play"
+    "study"
+    "exercise"
+    "social"
+    "selfcare";
+}
+
+@media screen and (min-width: 900px) {
+  :root {
+    --pd-inline: 3.5rem;
+  }
+
+  h1 {
+    font-size: var(--fs-700);
+  }
+
+  .container {
+    max-width: 1110px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 255px 255px;
+    grid-template-areas:
+      "profile work play study"
+      "profile exercise social selfcare";
+  }
+
+  .flex--column {
+    flex-direction: column;
+  }
+
+  .flex.flex--column {
+    align-items: flex-start;
+  }
 }
 
 /* User Profile */
+header {
+  grid-area: profile;
+  align-self: stretch;
+}
+
 header .outer-box {
   background-color: var(--color-background-container);
+  height: 100%;
 }
 
 header .inner-box {
@@ -153,31 +202,37 @@ header .flex {
 .task-item--work {
   border-color: var(--color-accent-orange);
   background-color: var(--color-accent-orange);
+  grid-area: work;
 }
 
 .task-item--play {
   border-color: var(--color-accent-blue);
   background-color: var(--color-accent-blue);
+  grid-area: play;
 }
 
 .task-item--study {
   border-color: var(--color-accent-red);
   background-color: var(--color-accent-red);
+  grid-area: study;
 }
 
 .task-item--exercise {
   border-color: var(--color-accent-green);
   background-color: var(--color-accent-green);
+  grid-area: exercise;
 }
 
 .task-item--social {
   border-color: var(--color-accent-violet);
   background-color: var(--color-accent-violet);
+  grid-area: social;
 }
 
 .task-item--selfcare {
   border-color: var(--color-accent-yellow);
   background-color: var(--color-accent-yellow);
+  grid-area: selfcare;
 }
 
 .task-item .inner-box {
@@ -208,13 +263,38 @@ header .flex {
 }
 
 .task-content {
-  padding-block: 1rem 0.5rem;
+  padding-block: 1rem 0.5;
 }
 
 .task__data {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-600);
   color: var(--color-text-primary);
   font-weight: 300;
+}
+
+@media screen and (min-width: 900px) {
+  .task-content {
+    padding-bottom: 3rem;
+  }
+
+  .task-content.flex {
+    align-items: flex-start;
+    height: 100%;
+    justify-content: flex-end;
+    row-gap: 0.5rem;
+  }
+
+  .task-item {
+    border-top-width: 4.5rem;
+  }
+
+  .task__icon {
+    top: -25%;
+  }
+
+  .task__data {
+    font-size: var(--fs-xl);
+  }
 }
 
 /* Attribution */
