@@ -20,30 +20,28 @@
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <div class="outer-box">
-          <div class="inner-box flex flex--column">
-            <img
-              class="profile__picture"
-              src="images/image-jeremy.png"
-              alt="Jeremy Robson"
-            />
-            <h1 class="profile__title"><span>Report for</span>Jeremy Robson</h1>
-          </div>
-          <ul class="view-type-list flex flex--column">
-            <li class="view-type">
-              <button class="btn view-btn">Daily</button>
-            </li>
-            <li class="view-type">
-              <button class="btn btn--active view-btn">Weekly</button>
-            </li>
-            <li class="view-type">
-              <button class="btn view-btn">Monthly</button>
-            </li>
-          </ul>
+    <main class="container">
+      <div class="user-profile outer-box">
+        <div class="inner-box flex flex--column">
+          <img
+            class="profile__picture"
+            src="images/image-jeremy.png"
+            alt="Jeremy Robson"
+          />
+          <h1 class="profile__title"><span>Report for</span>Jeremy Robson</h1>
         </div>
-      </header>
+        <ul class="view-type-list flex flex--column">
+          <li class="view-type">
+            <button class="btn view-btn">Daily</button>
+          </li>
+          <li class="view-type">
+            <button class="btn btn--active view-btn">Weekly</button>
+          </li>
+          <li class="view-type">
+            <button class="btn view-btn">Monthly</button>
+          </li>
+        </ul>
+      </div>
       <div class="task-item task-item--work outer-box">
         <img
           class="task__icon"
@@ -161,7 +159,7 @@
           </div>
         </article>
       </div>
-    </div>
+    </main>
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"

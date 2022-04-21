@@ -150,21 +150,21 @@ a {
 }
 
 /* User Profile */
-header {
+.user-profile {
   grid-area: profile;
   align-self: stretch;
 }
 
-header .outer-box {
+.user-profile.outer-box {
   background-color: var(--color-background-container);
   height: 100%;
 }
 
-header .inner-box {
+.user-profile .inner-box {
   background-color: var(--color-accent-main);
 }
 
-header .flex {
+.user-profile .flex {
   align-items: center;
   gap: 2rem;
 }
@@ -281,7 +281,26 @@ header .flex {
   font-weight: 300;
 }
 
+/* Attribution */
+.attribution {
+  margin-top: 3rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+.attribution a:hover {
+  color: var(--color-accent-main);
+}
+
 @media screen and (min-width: 900px) {
+  .user-profile .flex {
+    align-items: flex-start;
+  }
+
   .task-content {
     padding-bottom: 3rem;
   }
@@ -304,24 +323,7 @@ header .flex {
   .task__data {
     font-size: var(--fs-xl);
   }
-}
 
-/* Attribution */
-.attribution {
-  margin-top: 3rem;
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: var(--color-text-tertiary);
-  font-weight: 500;
-}
-
-.attribution a:hover {
-  color: var(--color-accent-main);
-}
-
-@media screen and (min-width: 900px) {
   .attribution {
     position: absolute;
     bottom: 1%;
