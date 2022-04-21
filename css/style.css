@@ -205,7 +205,7 @@ header .flex {
 .task-item {
   border-top: 3.8rem solid;
   position: relative;
-  clip-path: inset(0);
+  clip-path: inset(1px);
 }
 
 .task-item--work {
